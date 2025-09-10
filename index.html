@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking and Reservation System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      color: white;
+    }
+
+    .title {
+      max-width: 40%;
+      font-size: 40px;
+      font-weight: bold;
+      color: #1a73e8;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .booking-box {
+      background: white;
+      color: black;
+      padding: 25px;
+      border-radius: 15px;
+      width: 350px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .booking-box h2 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .adult-count {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .adult-count button {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .adult-count input {
+      width: 50px;
+      text-align: center;
+    }
+
+    .btn {
+      width: 100%;
+      background: #1a73e8;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0d5ecb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">
+    Hotel Booking and Reservation System
+  </div>
+
+  <div class="booking-box">
+    <h2>Search Your Hotel</h2>
+    <form>
+      <div class="form-group">
+        <label for="checkin">Check in Date</label>
+        <input type="date" id="checkin" name="checkin" required>
+      </div>
+
+      <div class="form-group">
+        <label for="checkout">Check out Date</label>
+        <input type="date" id="checkout" name="checkout" required>
+      </div>
+
+      <div class="form-group">
+        <label for="hotel">Select Hotel</label>
+        <select id="hotel" name="hotel" required>
+          <option value="">-- Choose Hotel --</option>
+          <option value="hotel1">Hotel Paradise</option>
+          <option value="hotel2">Sunset Resort</option>
+          <option value="hotel3">Ocean View</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Adult</label>
+        <div class="adult-count">
+          <button type="button" onclick="changeAdults(-1)">-</button>
+          <input type="number" id="adults" name="adults" value="1" min="1">
+          <button type="button" onclick="changeAdults(1)">+</button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Search Rooms</button>
+    </form>
+  </div>
+
+  <script>
+    function changeAdults(change) {
+      const adultsInput = document.getElementById("adults");
+      let value = parseInt(adultsInput.value) + change;
+      if (value < 1) value = 1;
+      adultsInput.value = value;
+    }
+  </script>
+</body>
+</html>
