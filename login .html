@@ -1,0 +1,56 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking Login</title>
+    <style>
+        body {
+            background: url('/static/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .login-box {
+            width: 400px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-box input[type="text"], .login-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+        .login-box input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: #e53935;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .login-box input[type="submit"]:hover {
+            background: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
